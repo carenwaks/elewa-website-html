@@ -33,6 +33,11 @@
   margin: 1rem;
 }
 
+li {
+  list-style: none;
+  display: inline;
+}
+
 .navigation a{
   margin: 2rem;
   text-decoration: none;
@@ -56,9 +61,6 @@ transition: all 600ms ease-out;
  
 }
 
-
- 
-
 .main-nav button{
   background-color: #2D2E52;
   color: white;
@@ -68,9 +70,9 @@ transition: all 600ms ease-out;
   margin: 2rem 3rem;
 }
 
-li{
+/* li{
   display: inline;
-}
+} */
 .parent{
   /* text-align: center; */
   display: flex;
@@ -78,46 +80,62 @@ li{
   flex-direction: column;
 }
 
-.Projects:hover{
+.nav-item:hover{
  text-decoration: underline;
 }
-.Company:hover{
-  text-decoration: underline;
- }
- .News:hover{
-  text-decoration: underline;
- }
 
-
+ .hamburger {
+  display: none;
+}
+.hamburger .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #101010;
+}
 /* Mobile and Tablet design view */
-@media only screen and (max-width: 760px) {
-  .landing-content {
-    align-items:center;
-    justify-items: auto;
-    display: block;
-    padding: 10%;
-  }
-  .landing-desc {
-    display: block;
+@media only screen and (max-width: 769px) {
+  /* */
+  .main-nav .navigation {
+    position: fixed;
+    left: -100%;
+    top: 5rem;
     flex-direction: column;
-    align-items: left;
-    gap: 20px;
-  }
-  .img-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 10%;
-  }
-  h3 {
-    text-align: left;
-    font-size: 40px;
-    padding: 10px;
-  }
-  p {
-    text-align: left;
-    font-size: 20px;
-    padding: 10px;
-  }
+    background-color: #fff;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+}
 
+.main-nav .navigation.active {
+    left: 0;
+}
+
+.main-nav .nav-item {
+    margin: 2.5rem 0;
+}
+
+.main-nav .hamburger {
+    display: block;
+    cursor: pointer;
+    padding-right: 10px;
+}
+
+/* Hamburger animation for active state */
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
 }
