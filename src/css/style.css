@@ -52,7 +52,6 @@ li {
 .caret-animation::before{
 transform:rotate(-180deg);
 transition: all 600ms ease-out;
-
 }
 
 .caret-animation svg:hover{
@@ -61,9 +60,45 @@ transition: all 600ms ease-out;
  
 }
 
+/* Dropdown Button */
+
+.dropdown {
+  position: relative;
+  display: inline;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9; /* Background color of the dropdown */
+  min-width: 160px; /* Set a minimum width for the dropdown menu */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Add a shadow to the dropdown menu */
+  visibility: hidden;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px; /* Add some padding to the items */
+  display: block;
+  max-width: 1960px;
+}
+
+
+.dropdown-content a:hover {
+  background-color: #F7F6F9; /* Highlight the item on hover */
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+  visibility: visible;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Add a shadow to the dropdown menu */
+
+}
+
 .main-nav button{
-  background-color: #2D2E52;
-  color: white;
+  /* background-color: #2D2E52;
+  color: white; */
   padding: 0.5rem 1rem;
   border-radius: 2rem;
   border-color: transparent;
